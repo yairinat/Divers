@@ -12,6 +12,14 @@ Soker_files=list.files(path = folder_path, pattern = NULL, all.files = FALSE,
 
   for (i in 1:12)
   {
-  print(Soker_files[i])
-  
-}
+  temp1=paste0(folder_path,"/",Soker_files[i])
+  x<-diver_data(filename=temp1)
+   if (i==11)
+   {
+     qplot(x$תחנה..,x$סוקר)
+     +\
+     geom_point() 
+   }
+   
+   
+ }
